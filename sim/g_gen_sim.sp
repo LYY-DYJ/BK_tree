@@ -1,5 +1,7 @@
+*g_gen_sim
 .lib ../lib/sm046005-1j.hspice typical 
 .include ../src/g_gen.sp
+.include ../src/inverter.sp
 
 .global VDD Clk
 VVDD VDD 0 3.3v

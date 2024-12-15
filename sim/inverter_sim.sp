@@ -1,3 +1,4 @@
+*inverter_sim
 .lib ../lib/sm046005-1j.hspice typical
 .include ../src/inverter.sp
 
