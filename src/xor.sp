@@ -1,0 +1,13 @@
+.PARAM LN=0.35u LP=0.35u WN=1u WP=3u WP_l=1u
+.subckt xor out a b
+Mp1 1 b VDD VDD PMOS_3P3 L=LP W=WP
+Mp2 c a 1 VDD PMOS_3P3 L=LP W=WP
+Mn1 c a 0 0 NMOS_3P3 L=LN W=WN
+Mn2 c b 0 0 NMOS_3P3 L=LN W=WN
+Mp3 2 c VDD VDD PMOS_3P3 L=LP W=WP
+Mp4 out a 2 VDD PMOS_3P3 L=LP W=WP
+MP5 out b 2 VDD PMOS_3P3 L=LP W=WP
+Mn3 3 b 0 0 NMOS_3P3 L=LN W=WN
+Mn4 out a 3 0 NMOS_3P3 L=LN W=WN
+Mn5 out c 0 0 NMOS_3P3 L=LN W=WN
+.ends xor
