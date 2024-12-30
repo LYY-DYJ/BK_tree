@@ -8,7 +8,7 @@ i = 0
 while i < width:
     content += " s" + str(i)
     i += 1
-content += " c" + str(width)
+content += " cout"
 
 i = 0
 while i < width:
@@ -134,7 +134,7 @@ while i < width:
         content += (
             "Xxor2"
             + str(i)
-            + " s"
+            + " s_d"
             + str(i)
             + " axorb"
             + str(i)
@@ -142,6 +142,14 @@ while i < width:
             + str(i)
             + " xor\n"
         )
+    i += 1
+
+i=0
+while i<=width:
+    if i!=width:
+        content+="Xdff"+str(i)+" s"+str(i)+" s_d"+str(i)+" Clk _Clk dff\n"
+    else:
+        content+="Xdff"+str(i)+" cout"+" c"+str(i)+" Clk _Clk dff\n"
     i += 1
 
 content += ".ends bk_tree"
