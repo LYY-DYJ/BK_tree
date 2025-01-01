@@ -39,9 +39,11 @@ while i < width:
         content += (
             "Xp_point"
             + str(j)
+            +"_"
             + str(i)
             + " p"
             + str(j)
+            +"_"
             + str(i)
             + " "
             + list_p[j]
@@ -52,9 +54,11 @@ while i < width:
         content += (
             "Xg_point"
             + str(j)
+            +"_"
             + str(i)
             + " g"
             + str(j)
+            +"_"
             + str(i)
             + " "
             + list_p[j]
@@ -64,8 +68,8 @@ while i < width:
             + list_g[j - i]
             + " Clk g_point\n"
         )
-        list_p[j] = "p" + str(j) + str(i)
-        list_g[j] = "g" + str(j) + str(i)
+        list_p[j] = "p" + str(j) +"_"+ str(i)
+        list_g[j] = "g" + str(j) +"_"+ str(i)
         j += 2 * i
     i *= 2
 
@@ -76,9 +80,11 @@ while i >= 1:
         content += (
             "Xp_point_inv"
             + str(j)
+            +"_"
             + str(i)
             + " p_inv"
             + str(j)
+            +"_"
             + str(i)
             + " "
             + list_p[j]
@@ -89,9 +95,11 @@ while i >= 1:
         content += (
             "Xg_point_inv"
             + str(j)
+            +"_"
             + str(i)
             + " g_inv"
             + str(j)
+            +"_"
             + str(i)
             + " "
             + list_p[j]
@@ -101,8 +109,8 @@ while i >= 1:
             + list_g[j - i]
             + " Clk g_point\n"
         )
-        list_p[j] = "p_inv" + str(j) + str(i)
-        list_g[j] = "g_inv" + str(j) + str(i)
+        list_p[j] = "p_inv" + str(j) +"_"+ str(i)
+        list_g[j] = "g_inv" + str(j) +"_"+ str(i)
         j -= 2 * i
     i //= 2
 
@@ -155,7 +163,7 @@ while i<=width:
 content += ".ends bk_tree"
 
 b_content = content.encode("utf8")
-file_path = "bk_tree.sp"
+file_path = "bk_tree16.sp"
 file = os.open(file_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC)
 os.write(file, b_content)
 os.close(file)
